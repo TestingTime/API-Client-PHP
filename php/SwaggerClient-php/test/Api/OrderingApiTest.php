@@ -71,16 +71,6 @@ class OrderingApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for ordersOrderIdGet
-     *
-     * Read an existing order..
-     *
-     */
-    public function testOrdersOrderIdGet()
-    {
-    }
-
-    /**
      * Test case for ordersPost
      *
      * Create a new order to recruit test users..

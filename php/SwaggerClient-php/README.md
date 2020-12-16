@@ -56,48 +56,25 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\HandlingParticipantsApi(
+// Configure API key authorization: api_key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\OrderingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$order_id = "order_id_example"; // string | OrderId of the order you want to read the participants from.
+$body = new \Swagger\Client\Model\Order(); // \Swagger\Client\Model\Order | Order with all its properties to be created
+$x_api_key = "x_api_key_example"; // string | Partners API key - get this from the engineers of TestingTime
 
 try {
-    $result = $apiInstance->ordersOrderIdParticipantsGet($order_id);
+    $result = $apiInstance->ordersPost($body, $x_api_key);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HandlingParticipantsApi->ordersOrderIdParticipantsGet: ', $e->getMessage(), PHP_EOL;
-}
-
-$apiInstance = new Swagger\Client\Api\HandlingParticipantsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$order_id = "order_id_example"; // string | OrderId of the order you want to assign a participant to.
-$participant_id = "participant_id_example"; // string | ParticipantId of the user you want to assign.
-$slot = 1.2; // float | Timestamp of the date you want to assign the user to.
-
-try {
-    $apiInstance->ordersOrderIdParticipantsParticipantIdPut($order_id, $participant_id, $slot);
-} catch (Exception $e) {
-    echo 'Exception when calling HandlingParticipantsApi->ordersOrderIdParticipantsParticipantIdPut: ', $e->getMessage(), PHP_EOL;
-}
-
-$apiInstance = new Swagger\Client\Api\HandlingParticipantsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$body = new \Swagger\Client\Model\Rating(); // \Swagger\Client\Model\Rating | Rating that should be added
-$order_id = "order_id_example"; // string | OrderId of the order you want to rate a participant.
-$participant_id = "participant_id_example"; // string | ParticipantId of the user you want to rate
-
-try {
-    $apiInstance->ordersOrderIdParticipantsParticipantIdRatingPost($body, $order_id, $participant_id);
-} catch (Exception $e) {
-    echo 'Exception when calling HandlingParticipantsApi->ordersOrderIdParticipantsParticipantIdRatingPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderingApi->ordersPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -108,10 +85,6 @@ All URIs are relative to *https://sandbox.api.testingtime.com/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*HandlingParticipantsApi* | [**ordersOrderIdParticipantsGet**](docs/Api/HandlingParticipantsApi.md#ordersorderidparticipantsget) | **GET** /orders/{orderId}/participants | Read all available &amp; matching participants of an order.
-*HandlingParticipantsApi* | [**ordersOrderIdParticipantsParticipantIdPut**](docs/Api/HandlingParticipantsApi.md#ordersorderidparticipantsparticipantidput) | **PUT** /orders/{orderId}/participants/{participantId} | Assign and confirm a specific participant to a slot
-*HandlingParticipantsApi* | [**ordersOrderIdParticipantsParticipantIdRatingPost**](docs/Api/HandlingParticipantsApi.md#ordersorderidparticipantsparticipantidratingpost) | **POST** /orders/{orderId}/participants/{participantId}/rating | Rate a participant
-*OrderingApi* | [**ordersOrderIdGet**](docs/Api/OrderingApi.md#ordersorderidget) | **GET** /orders/{orderId} | Read an existing order.
 *OrderingApi* | [**ordersPost**](docs/Api/OrderingApi.md#orderspost) | **POST** /orders | Create a new order to recruit test users.
 
 ## Documentation For Models
