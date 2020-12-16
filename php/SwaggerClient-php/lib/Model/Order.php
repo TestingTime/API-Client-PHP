@@ -69,6 +69,7 @@ class Order implements ModelInterface, ArrayAccess
 'countries' => 'string[]',
 'languages' => 'string[]',
 'screening' => '\Swagger\Client\Model\Screener[]',
+'tags' => 'string',
 'gender_mix' => 'string',
 'devices' => 'string[]',
 'platform' => 'string',
@@ -94,6 +95,7 @@ class Order implements ModelInterface, ArrayAccess
 'countries' => null,
 'languages' => null,
 'screening' => null,
+'tags' => null,
 'gender_mix' => null,
 'devices' => null,
 'platform' => null,
@@ -140,6 +142,7 @@ class Order implements ModelInterface, ArrayAccess
 'countries' => 'countries',
 'languages' => 'languages',
 'screening' => 'screening',
+'tags' => 'tags',
 'gender_mix' => 'genderMix',
 'devices' => 'devices',
 'platform' => 'platform',
@@ -165,6 +168,7 @@ class Order implements ModelInterface, ArrayAccess
 'countries' => 'setCountries',
 'languages' => 'setLanguages',
 'screening' => 'setScreening',
+'tags' => 'setTags',
 'gender_mix' => 'setGenderMix',
 'devices' => 'setDevices',
 'platform' => 'setPlatform',
@@ -190,6 +194,7 @@ class Order implements ModelInterface, ArrayAccess
 'countries' => 'getCountries',
 'languages' => 'getLanguages',
 'screening' => 'getScreening',
+'tags' => 'getTags',
 'gender_mix' => 'getGenderMix',
 'devices' => 'getDevices',
 'platform' => 'getPlatform',
@@ -367,6 +372,7 @@ self::PLATFORM_ANY,        ];
         $this->container['countries'] = isset($data['countries']) ? $data['countries'] : null;
         $this->container['languages'] = isset($data['languages']) ? $data['languages'] : null;
         $this->container['screening'] = isset($data['screening']) ? $data['screening'] : null;
+        $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
         $this->container['gender_mix'] = isset($data['gender_mix']) ? $data['gender_mix'] : null;
         $this->container['devices'] = isset($data['devices']) ? $data['devices'] : null;
         $this->container['platform'] = isset($data['platform']) ? $data['platform'] : null;
@@ -679,7 +685,7 @@ self::PLATFORM_ANY,        ];
     /**
      * Sets title
      *
-     * @param string $title Give the study an optional title. This will be shown in the dashboard.
+     * @param string $title Give the study an optional title. This will be shown in the dashboard. Here you could also add an identifier for your internal orderId or customerId
      *
      * @return $this
      */
@@ -782,6 +788,30 @@ self::PLATFORM_ANY,        ];
     public function setScreening($screening)
     {
         $this->container['screening'] = $screening;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return string
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param string $tags An ID that identifies a customer ordering. This is important to exclude test users that were already with the same customer.
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

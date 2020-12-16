@@ -1,6 +1,6 @@
 # Swagger\Client\HandlingParticipantsApi
 
-All URIs are relative to *https://api.testingtime.com/{basePath}*
+All URIs are relative to *https://sandbox.api.testingtime.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

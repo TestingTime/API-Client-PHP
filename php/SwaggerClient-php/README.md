@@ -104,13 +104,14 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.testingtime.com/{basePath}*
+All URIs are relative to *https://sandbox.api.testingtime.com/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *HandlingParticipantsApi* | [**ordersOrderIdParticipantsGet**](docs/Api/HandlingParticipantsApi.md#ordersorderidparticipantsget) | **GET** /orders/{orderId}/participants | Read all available &amp; matching participants of an order.
 *HandlingParticipantsApi* | [**ordersOrderIdParticipantsParticipantIdPut**](docs/Api/HandlingParticipantsApi.md#ordersorderidparticipantsparticipantidput) | **PUT** /orders/{orderId}/participants/{participantId} | Assign and confirm a specific participant to a slot
 *HandlingParticipantsApi* | [**ordersOrderIdParticipantsParticipantIdRatingPost**](docs/Api/HandlingParticipantsApi.md#ordersorderidparticipantsparticipantidratingpost) | **POST** /orders/{orderId}/participants/{participantId}/rating | Rate a participant
+*OrderingApi* | [**ordersOrderIdGet**](docs/Api/OrderingApi.md#ordersorderidget) | **GET** /orders/{orderId} | Read an existing order.
 *OrderingApi* | [**ordersPost**](docs/Api/OrderingApi.md#orderspost) | **POST** /orders | Create a new order to recruit test users.
 
 ## Documentation For Models

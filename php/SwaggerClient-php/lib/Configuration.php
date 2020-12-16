@@ -80,7 +80,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.testingtime.com/{basePath}';
+    protected $host = 'https://sandbox.api.testingtime.com/';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
