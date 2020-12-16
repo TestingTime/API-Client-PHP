@@ -468,6 +468,22 @@ class OrderingApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -592,11 +608,11 @@ class OrderingApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'text/plain']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'text/plain'],
                 ['application/json']
             );
         }
