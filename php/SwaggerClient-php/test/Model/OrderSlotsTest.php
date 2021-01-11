@@ -1,6 +1,6 @@
 <?php
 /**
- * ScreenerTest
+ * OrderSlotsTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * ScreenerTest Class Doc Comment
+ * OrderSlotsTest Class Doc Comment
  *
  * @category    Class
- * @description Screener
+ * @description Timestamp of the dates you are available to conduct a test.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ScreenerTest extends \PHPUnit_Framework_TestCase
+class OrderSlotsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,37 +69,23 @@ class ScreenerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Screener"
+     * Test "OrderSlots"
      */
-    public function testScreener()
+    public function testOrderSlots()
     {
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "datetime"
      */
-    public function testPropertyType()
+    public function testPropertyDatetime()
     {
     }
 
     /**
-     * Test attribute "ask"
+     * Test attribute "preferred"
      */
-    public function testPropertyAsk()
-    {
-    }
-
-    /**
-     * Test attribute "responses"
-     */
-    public function testPropertyResponses()
-    {
-    }
-
-    /**
-     * Test attribute "placeholder"
-     */
-    public function testPropertyPlaceholder()
+    public function testPropertyPreferred()
     {
     }
 }

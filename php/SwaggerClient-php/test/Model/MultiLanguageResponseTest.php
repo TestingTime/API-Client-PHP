@@ -97,9 +97,9 @@ class MultiLanguageResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "operation"
+     * Test attribute "qualification"
      */
-    public function testPropertyOperation()
+    public function testPropertyQualification()
     {
     }
 }

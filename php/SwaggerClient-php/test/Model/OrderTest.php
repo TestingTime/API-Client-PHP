@@ -76,27 +76,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "min_age"
-     */
-    public function testPropertyMinAge()
-    {
-    }
-
-    /**
-     * Test attribute "max_age"
-     */
-    public function testPropertyMaxAge()
-    {
-    }
-
-    /**
-     * Test attribute "users"
-     */
-    public function testPropertyUsers()
-    {
-    }
-
-    /**
      * Test attribute "method"
      */
     public function testPropertyMethod()
@@ -107,20 +86,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      * Test attribute "venue"
      */
     public function testPropertyVenue()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
-
-    /**
-     * Test attribute "link"
-     */
-    public function testPropertyLink()
     {
     }
 
@@ -139,9 +104,86 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+    }
+
+    /**
      * Test attribute "location"
      */
     public function testPropertyLocation()
+    {
+    }
+
+    /**
+     * Test attribute "contact"
+     */
+    public function testPropertyContact()
+    {
+    }
+
+    /**
+     * Test attribute "billing"
+     */
+    public function testPropertyBilling()
+    {
+    }
+
+    /**
+     * Test attribute "quote"
+     */
+    public function testPropertyQuote()
+    {
+    }
+
+    /**
+     * Test attribute "incentive"
+     */
+    public function testPropertyIncentive()
+    {
+    }
+
+    /**
+     * Test attribute "team_id"
+     */
+    public function testPropertyTeamId()
+    {
+    }
+
+    /**
+     * Test attribute "paid_with"
+     */
+    public function testPropertyPaidWith()
+    {
+    }
+
+    /**
+     * Test attribute "locale"
+     */
+    public function testPropertyLocale()
+    {
+    }
+
+    /**
+     * Test attribute "slots"
+     */
+    public function testPropertySlots()
+    {
+    }
+
+    /**
+     * Test attribute "users"
+     */
+    public function testPropertyUsers()
+    {
+    }
+
+    /**
+     * Test attribute "pool_secret"
+     */
+    public function testPropertyPoolSecret()
     {
     }
 
@@ -153,6 +195,13 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "nda"
+     */
+    public function testPropertyNda()
+    {
+    }
+
+    /**
      * Test attribute "languages"
      */
     public function testPropertyLanguages()
@@ -160,16 +209,23 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "screening"
+     * Test attribute "languages_op"
      */
-    public function testPropertyScreening()
+    public function testPropertyLanguagesOp()
     {
     }
 
     /**
-     * Test attribute "tags"
+     * Test attribute "min_age"
      */
-    public function testPropertyTags()
+    public function testPropertyMinAge()
+    {
+    }
+
+    /**
+     * Test attribute "max_age"
+     */
+    public function testPropertyMaxAge()
     {
     }
 
@@ -181,16 +237,51 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "devices"
+     * Test attribute "platform"
      */
-    public function testPropertyDevices()
+    public function testPropertyPlatform()
     {
     }
 
     /**
-     * Test attribute "platform"
+     * Test attribute "contact_via_type"
      */
-    public function testPropertyPlatform()
+    public function testPropertyContactViaType()
+    {
+    }
+
+    /**
+     * Test attribute "contact_via_details"
+     */
+    public function testPropertyContactViaDetails()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "link"
+     */
+    public function testPropertyLink()
+    {
+    }
+
+    /**
+     * Test attribute "tags"
+     */
+    public function testPropertyTags()
+    {
+    }
+
+    /**
+     * Test attribute "devices"
+     */
+    public function testPropertyDevices()
     {
     }
 
@@ -202,9 +293,9 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "slots"
+     * Test attribute "screening"
      */
-    public function testPropertySlots()
+    public function testPropertyScreening()
     {
     }
 }

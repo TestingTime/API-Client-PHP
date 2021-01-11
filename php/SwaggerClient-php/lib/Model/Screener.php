@@ -56,8 +56,7 @@ class Screener implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'question_id' => 'string',
-'type' => 'string',
+        'type' => 'string',
 'ask' => '\Swagger\Client\Model\MultiLanguageAsk',
 'responses' => '\Swagger\Client\Model\MultiLanguageResponse[]',
 'placeholder' => 'string'    ];
@@ -68,8 +67,7 @@ class Screener implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'question_id' => null,
-'type' => null,
+        'type' => null,
 'ask' => null,
 'responses' => null,
 'placeholder' => null    ];
@@ -101,8 +99,7 @@ class Screener implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'question_id' => 'questionId',
-'type' => 'type',
+        'type' => 'type',
 'ask' => 'ask',
 'responses' => 'responses',
 'placeholder' => 'placeholder'    ];
@@ -113,8 +110,7 @@ class Screener implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'question_id' => 'setQuestionId',
-'type' => 'setType',
+        'type' => 'setType',
 'ask' => 'setAsk',
 'responses' => 'setResponses',
 'placeholder' => 'setPlaceholder'    ];
@@ -125,8 +121,7 @@ class Screener implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'question_id' => 'getQuestionId',
-'type' => 'getType',
+        'type' => 'getType',
 'ask' => 'getAsk',
 'responses' => 'getResponses',
 'placeholder' => 'getPlaceholder'    ];
@@ -204,7 +199,6 @@ self::TYPE_TEXT,        ];
      */
     public function __construct(array $data = null)
     {
-        $this->container['question_id'] = isset($data['question_id']) ? $data['question_id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['ask'] = isset($data['ask']) ? $data['ask'] : null;
         $this->container['responses'] = isset($data['responses']) ? $data['responses'] : null;
@@ -242,30 +236,6 @@ self::TYPE_TEXT,        ];
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets question_id
-     *
-     * @return string
-     */
-    public function getQuestionId()
-    {
-        return $this->container['question_id'];
-    }
-
-    /**
-     * Sets question_id
-     *
-     * @param string $question_id If you want to reuse an existing question in the TestingTime system.
-     *
-     * @return $this
-     */
-    public function setQuestionId($question_id)
-    {
-        $this->container['question_id'] = $question_id;
-
-        return $this;
-    }
 
     /**
      * Gets type

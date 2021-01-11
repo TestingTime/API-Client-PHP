@@ -1,6 +1,6 @@
 <?php
 /**
- * MultiLanguageResponse
+ * OrderSlots
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * MultiLanguageResponse Class Doc Comment
+ * OrderSlots Class Doc Comment
  *
  * @category Class
- * @description A single response option for a user in all languages and if selecting this option brings a user further or gets rejected.
+ * @description Timestamp of the dates you are available to conduct a test.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MultiLanguageResponse implements ModelInterface, ArrayAccess
+class OrderSlots implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MultiLanguageResponse';
+    protected static $swaggerModelName = 'Order_slots';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,8 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'en' => 'string',
-'de' => 'string',
-'fr' => 'string',
-'qualification' => 'string'    ];
+        'datetime' => 'float',
+'preferred' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,10 +66,8 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'en' => null,
-'de' => null,
-'fr' => null,
-'qualification' => null    ];
+        'datetime' => null,
+'preferred' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -100,10 +96,8 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'en' => 'en',
-'de' => 'de',
-'fr' => 'fr',
-'qualification' => 'qualification'    ];
+        'datetime' => 'datetime',
+'preferred' => 'preferred'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -111,10 +105,8 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'en' => 'setEn',
-'de' => 'setDe',
-'fr' => 'setFr',
-'qualification' => 'setQualification'    ];
+        'datetime' => 'setDatetime',
+'preferred' => 'setPreferred'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -122,10 +114,8 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'en' => 'getEn',
-'de' => 'getDe',
-'fr' => 'getFr',
-'qualification' => 'getQualification'    ];
+        'datetime' => 'getDatetime',
+'preferred' => 'getPreferred'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -168,22 +158,7 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const QUALIFICATION_QUALIFY = 'QUALIFY';
-const QUALIFICATION_DISQUALIFY = 'DISQUALIFY';
-const QUALIFICATION_IRRELEVANT = 'IRRELEVANT';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getQualificationAllowableValues()
-    {
-        return [
-            self::QUALIFICATION_QUALIFY,
-self::QUALIFICATION_DISQUALIFY,
-self::QUALIFICATION_IRRELEVANT,        ];
-    }
+    
 
     /**
      * Associative array for storing property values
@@ -200,10 +175,8 @@ self::QUALIFICATION_IRRELEVANT,        ];
      */
     public function __construct(array $data = null)
     {
-        $this->container['en'] = isset($data['en']) ? $data['en'] : null;
-        $this->container['de'] = isset($data['de']) ? $data['de'] : null;
-        $this->container['fr'] = isset($data['fr']) ? $data['fr'] : null;
-        $this->container['qualification'] = isset($data['qualification']) ? $data['qualification'] : null;
+        $this->container['datetime'] = isset($data['datetime']) ? $data['datetime'] : null;
+        $this->container['preferred'] = isset($data['preferred']) ? $data['preferred'] : null;
     }
 
     /**
@@ -214,17 +187,6 @@ self::QUALIFICATION_IRRELEVANT,        ];
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if ($this->container['en'] === null) {
-            $invalidProperties[] = "'en' can't be null";
-        }
-        $allowedValues = $this->getQualificationAllowableValues();
-        if (!is_null($this->container['qualification']) && !in_array($this->container['qualification'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'qualification', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -242,106 +204,49 @@ self::QUALIFICATION_IRRELEVANT,        ];
 
 
     /**
-     * Gets en
+     * Gets datetime
      *
-     * @return string
+     * @return float
      */
-    public function getEn()
+    public function getDatetime()
     {
-        return $this->container['en'];
+        return $this->container['datetime'];
     }
 
     /**
-     * Sets en
+     * Sets datetime
      *
-     * @param string $en en
+     * @param float $datetime datetime
      *
      * @return $this
      */
-    public function setEn($en)
+    public function setDatetime($datetime)
     {
-        $this->container['en'] = $en;
+        $this->container['datetime'] = $datetime;
 
         return $this;
     }
 
     /**
-     * Gets de
+     * Gets preferred
      *
-     * @return string
+     * @return bool
      */
-    public function getDe()
+    public function getPreferred()
     {
-        return $this->container['de'];
+        return $this->container['preferred'];
     }
 
     /**
-     * Sets de
+     * Sets preferred
      *
-     * @param string $de de
+     * @param bool $preferred preferred
      *
      * @return $this
      */
-    public function setDe($de)
+    public function setPreferred($preferred)
     {
-        $this->container['de'] = $de;
-
-        return $this;
-    }
-
-    /**
-     * Gets fr
-     *
-     * @return string
-     */
-    public function getFr()
-    {
-        return $this->container['fr'];
-    }
-
-    /**
-     * Sets fr
-     *
-     * @param string $fr fr
-     *
-     * @return $this
-     */
-    public function setFr($fr)
-    {
-        $this->container['fr'] = $fr;
-
-        return $this;
-    }
-
-    /**
-     * Gets qualification
-     *
-     * @return string
-     */
-    public function getQualification()
-    {
-        return $this->container['qualification'];
-    }
-
-    /**
-     * Sets qualification
-     *
-     * @param string $qualification qualification
-     *
-     * @return $this
-     */
-    public function setQualification($qualification)
-    {
-        $allowedValues = $this->getQualificationAllowableValues();
-        if (!is_null($qualification) && !in_array($qualification, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'qualification', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['qualification'] = $qualification;
+        $this->container['preferred'] = $preferred;
 
         return $this;
     }

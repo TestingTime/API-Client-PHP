@@ -68,10 +68,9 @@ $apiInstance = new Swagger\Client\Api\OrderingApi(
     $config
 );
 $body = new \Swagger\Client\Model\Order(); // \Swagger\Client\Model\Order | Order with all its properties to be created
-$x_api_key = "x_api_key_example"; // string | Partners API key - get this from the engineers of TestingTime
 
 try {
-    $result = $apiInstance->ordersPost($body, $x_api_key);
+    $result = $apiInstance->ordersPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderingApi->ordersPost: ', $e->getMessage(), PHP_EOL;
@@ -95,6 +94,7 @@ Class | Method | HTTP request | Description
  - [Order](docs/Model/Order.md)
  - [OrderCreated](docs/Model/OrderCreated.md)
  - [OrderLocation](docs/Model/OrderLocation.md)
+ - [OrderSlots](docs/Model/OrderSlots.md)
  - [Participant](docs/Model/Participant.md)
  - [Participants](docs/Model/Participants.md)
  - [Rating](docs/Model/Rating.md)

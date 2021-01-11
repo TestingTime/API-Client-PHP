@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**question_id** | **string** | If you want to reuse an existing question in the TestingTime system. | [optional] 
 **type** | **string** |  | [optional] 
 **ask** | [**\Swagger\Client\Model\MultiLanguageAsk**](MultiLanguageAsk.md) |  | [optional] 
 **responses** | [**\Swagger\Client\Model\MultiLanguageResponse[]**](MultiLanguageResponse.md) |  | [optional] 
