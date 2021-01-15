@@ -13,9 +13,7 @@ Name | Type | Description | Notes
 **billing** | **object** |  | [optional] 
 **quote** | **string** |  | [optional] 
 **incentive** | **object** |  | [optional] 
-**team_id** | **string** |  | [optional] 
-**paid_with** | **string** |  | [optional] 
-**locale** | **string** |  | 
+**locale** | **string** | The country specified in billing will take precedence over the country specified in this locale field | 
 **slots** | [**\Swagger\Client\Model\OrderSlots[]**](OrderSlots.md) |  | [optional] 
 **users** | **float** |  | 
 **pool_secret** | **string** |  | [optional] 
