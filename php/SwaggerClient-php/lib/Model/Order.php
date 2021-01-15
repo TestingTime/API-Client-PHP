@@ -56,25 +56,38 @@ class Order implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'min_age' => 'float',
-'max_age' => 'float',
-'users' => 'float',
-'method' => 'string',
+        'method' => 'string',
 'venue' => 'string',
-'type' => 'string',
-'link' => 'string',
 'minutes' => 'float',
 'title' => 'string',
+'state' => 'string',
 'location' => '\Swagger\Client\Model\OrderLocation',
+'contact' => 'object',
+'billing' => 'object',
+'quote' => 'string',
+'incentive' => 'object',
+'team_id' => 'string',
+'paid_with' => 'string',
+'locale' => 'string',
+'slots' => '\Swagger\Client\Model\OrderSlots[]',
+'users' => 'float',
+'pool_secret' => 'string',
 'countries' => 'string[]',
+'nda' => 'object',
 'languages' => 'string[]',
-'screening' => '\Swagger\Client\Model\Screener[]',
-'tags' => 'string',
+'languages_op' => 'string',
+'min_age' => 'float',
+'max_age' => 'float',
 'gender_mix' => 'string',
-'devices' => 'string[]',
 'platform' => 'string',
+'contact_via_type' => 'string',
+'contact_via_details' => 'string',
+'type' => 'string',
+'link' => 'string',
+'tags' => 'string',
+'devices' => 'string[]',
 'time_zone' => 'string',
-'slots' => 'float[]'    ];
+'screening' => '\Swagger\Client\Model\Screener[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -82,25 +95,38 @@ class Order implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'min_age' => null,
-'max_age' => null,
-'users' => null,
-'method' => null,
+        'method' => null,
 'venue' => null,
-'type' => null,
-'link' => null,
 'minutes' => null,
 'title' => null,
+'state' => null,
 'location' => null,
+'contact' => null,
+'billing' => null,
+'quote' => null,
+'incentive' => null,
+'team_id' => null,
+'paid_with' => null,
+'locale' => null,
+'slots' => null,
+'users' => null,
+'pool_secret' => null,
 'countries' => null,
+'nda' => null,
 'languages' => null,
-'screening' => null,
-'tags' => null,
+'languages_op' => null,
+'min_age' => null,
+'max_age' => null,
 'gender_mix' => null,
-'devices' => null,
 'platform' => null,
+'contact_via_type' => null,
+'contact_via_details' => null,
+'type' => null,
+'link' => null,
+'tags' => null,
+'devices' => null,
 'time_zone' => null,
-'slots' => null    ];
+'screening' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -129,25 +155,38 @@ class Order implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'min_age' => 'minAge',
-'max_age' => 'maxAge',
-'users' => 'users',
-'method' => 'method',
+        'method' => 'method',
 'venue' => 'venue',
-'type' => 'type',
-'link' => 'link',
 'minutes' => 'minutes',
 'title' => 'title',
+'state' => 'state',
 'location' => 'location',
+'contact' => 'contact',
+'billing' => 'billing',
+'quote' => 'quote',
+'incentive' => 'incentive',
+'team_id' => 'teamId',
+'paid_with' => 'paidWith',
+'locale' => 'locale',
+'slots' => 'slots',
+'users' => 'users',
+'pool_secret' => 'poolSecret',
 'countries' => 'countries',
+'nda' => 'nda',
 'languages' => 'languages',
-'screening' => 'screening',
-'tags' => 'tags',
+'languages_op' => 'languagesOp',
+'min_age' => 'minAge',
+'max_age' => 'maxAge',
 'gender_mix' => 'genderMix',
-'devices' => 'devices',
 'platform' => 'platform',
+'contact_via_type' => 'contactViaType',
+'contact_via_details' => 'contactViaDetails',
+'type' => 'type',
+'link' => 'link',
+'tags' => 'tags',
+'devices' => 'devices',
 'time_zone' => 'timeZone',
-'slots' => 'slots'    ];
+'screening' => 'screening'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -155,25 +194,38 @@ class Order implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'min_age' => 'setMinAge',
-'max_age' => 'setMaxAge',
-'users' => 'setUsers',
-'method' => 'setMethod',
+        'method' => 'setMethod',
 'venue' => 'setVenue',
-'type' => 'setType',
-'link' => 'setLink',
 'minutes' => 'setMinutes',
 'title' => 'setTitle',
+'state' => 'setState',
 'location' => 'setLocation',
+'contact' => 'setContact',
+'billing' => 'setBilling',
+'quote' => 'setQuote',
+'incentive' => 'setIncentive',
+'team_id' => 'setTeamId',
+'paid_with' => 'setPaidWith',
+'locale' => 'setLocale',
+'slots' => 'setSlots',
+'users' => 'setUsers',
+'pool_secret' => 'setPoolSecret',
 'countries' => 'setCountries',
+'nda' => 'setNda',
 'languages' => 'setLanguages',
-'screening' => 'setScreening',
-'tags' => 'setTags',
+'languages_op' => 'setLanguagesOp',
+'min_age' => 'setMinAge',
+'max_age' => 'setMaxAge',
 'gender_mix' => 'setGenderMix',
-'devices' => 'setDevices',
 'platform' => 'setPlatform',
+'contact_via_type' => 'setContactViaType',
+'contact_via_details' => 'setContactViaDetails',
+'type' => 'setType',
+'link' => 'setLink',
+'tags' => 'setTags',
+'devices' => 'setDevices',
 'time_zone' => 'setTimeZone',
-'slots' => 'setSlots'    ];
+'screening' => 'setScreening'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -181,25 +233,38 @@ class Order implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'min_age' => 'getMinAge',
-'max_age' => 'getMaxAge',
-'users' => 'getUsers',
-'method' => 'getMethod',
+        'method' => 'getMethod',
 'venue' => 'getVenue',
-'type' => 'getType',
-'link' => 'getLink',
 'minutes' => 'getMinutes',
 'title' => 'getTitle',
+'state' => 'getState',
 'location' => 'getLocation',
+'contact' => 'getContact',
+'billing' => 'getBilling',
+'quote' => 'getQuote',
+'incentive' => 'getIncentive',
+'team_id' => 'getTeamId',
+'paid_with' => 'getPaidWith',
+'locale' => 'getLocale',
+'slots' => 'getSlots',
+'users' => 'getUsers',
+'pool_secret' => 'getPoolSecret',
 'countries' => 'getCountries',
+'nda' => 'getNda',
 'languages' => 'getLanguages',
-'screening' => 'getScreening',
-'tags' => 'getTags',
+'languages_op' => 'getLanguagesOp',
+'min_age' => 'getMinAge',
+'max_age' => 'getMaxAge',
 'gender_mix' => 'getGenderMix',
-'devices' => 'getDevices',
 'platform' => 'getPlatform',
+'contact_via_type' => 'getContactViaType',
+'contact_via_details' => 'getContactViaDetails',
+'type' => 'getType',
+'link' => 'getLink',
+'tags' => 'getTags',
+'devices' => 'getDevices',
 'time_zone' => 'getTimeZone',
-'slots' => 'getSlots'    ];
+'screening' => 'getScreening'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -251,20 +316,34 @@ const METHOD_DIARY = 'DIARY';
 const VENUE_REMOTE = 'REMOTE';
 const VENUE_INHOUSE = 'INHOUSE';
 const VENUE_INHOME = 'INHOME';
-const TYPE_MODERATED = 'MODERATED';
-const TYPE_UNMODERATED = 'UNMODERATED';
+const STATE_OFFER = 'OFFER';
+const STATE_RECRUITING = 'RECRUITING';
+const STATE_DELETED = 'DELETED';
+const PAID_WITH_CC = 'CC';
+const PAID_WITH_PP = 'PP';
+const PAID_WITH_INV = 'INV';
+const PAID_WITH_PAY_PAL = 'PayPal';
+const LANGUAGES_OP__AND = 'AND';
+const LANGUAGES_OP__OR = 'OR';
 const GENDER_MIX_FEMALE = 'FEMALE';
 const GENDER_MIX_MALE = 'MALE';
 const GENDER_MIX_MIXED = 'MIXED';
+const PLATFORM_APPLE = 'APPLE';
+const PLATFORM_ANDROID = 'ANDROID';
+const PLATFORM_WINDOWS = 'WINDOWS';
+const PLATFORM_ANY = 'ANY';
+const CONTACT_VIA_TYPE_LOOKBACK = 'LOOKBACK';
+const CONTACT_VIA_TYPE_ZOOM = 'ZOOM';
+const CONTACT_VIA_TYPE_SKYPE = 'SKYPE';
+const CONTACT_VIA_TYPE_WHEREBY = 'WHEREBY';
+const CONTACT_VIA_TYPE_OTHER = 'OTHER';
+const TYPE_MODERATED = 'MODERATED';
+const TYPE_UNMODERATED = 'UNMODERATED';
 const DEVICES_COMPUTER = 'COMPUTER';
 const DEVICES_TABLET = 'TABLET';
 const DEVICES_PHONE = 'PHONE';
 const DEVICES_WATCH = 'WATCH';
 const DEVICES_ANY = 'ANY';
-const PLATFORM_APPLE = 'APPLE';
-const PLATFORM_ANDROID = 'ANDROID';
-const PLATFORM_WINDOWS = 'WINDOWS';
-const PLATFORM_ANY = 'ANY';
 
     /**
      * Gets allowable values of the enum
@@ -298,11 +377,36 @@ self::VENUE_INHOME,        ];
      *
      * @return string[]
      */
-    public function getTypeAllowableValues()
+    public function getStateAllowableValues()
     {
         return [
-            self::TYPE_MODERATED,
-self::TYPE_UNMODERATED,        ];
+            self::STATE_OFFER,
+self::STATE_RECRUITING,
+self::STATE_DELETED,        ];
+    }
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPaidWithAllowableValues()
+    {
+        return [
+            self::PAID_WITH_CC,
+self::PAID_WITH_PP,
+self::PAID_WITH_INV,
+self::PAID_WITH_PAY_PAL,        ];
+    }
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getLanguagesOpAllowableValues()
+    {
+        return [
+            self::LANGUAGES_OP__AND,
+self::LANGUAGES_OP__OR,        ];
     }
     /**
      * Gets allowable values of the enum
@@ -321,6 +425,44 @@ self::GENDER_MIX_MIXED,        ];
      *
      * @return string[]
      */
+    public function getPlatformAllowableValues()
+    {
+        return [
+            self::PLATFORM_APPLE,
+self::PLATFORM_ANDROID,
+self::PLATFORM_WINDOWS,
+self::PLATFORM_ANY,        ];
+    }
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getContactViaTypeAllowableValues()
+    {
+        return [
+            self::CONTACT_VIA_TYPE_LOOKBACK,
+self::CONTACT_VIA_TYPE_ZOOM,
+self::CONTACT_VIA_TYPE_SKYPE,
+self::CONTACT_VIA_TYPE_WHEREBY,
+self::CONTACT_VIA_TYPE_OTHER,        ];
+    }
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_MODERATED,
+self::TYPE_UNMODERATED,        ];
+    }
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
     public function getDevicesAllowableValues()
     {
         return [
@@ -329,19 +471,6 @@ self::DEVICES_TABLET,
 self::DEVICES_PHONE,
 self::DEVICES_WATCH,
 self::DEVICES_ANY,        ];
-    }
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getPlatformAllowableValues()
-    {
-        return [
-            self::PLATFORM_APPLE,
-self::PLATFORM_ANDROID,
-self::PLATFORM_WINDOWS,
-self::PLATFORM_ANY,        ];
     }
 
     /**
@@ -359,25 +488,38 @@ self::PLATFORM_ANY,        ];
      */
     public function __construct(array $data = null)
     {
-        $this->container['min_age'] = isset($data['min_age']) ? $data['min_age'] : null;
-        $this->container['max_age'] = isset($data['max_age']) ? $data['max_age'] : null;
-        $this->container['users'] = isset($data['users']) ? $data['users'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
         $this->container['venue'] = isset($data['venue']) ? $data['venue'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['minutes'] = isset($data['minutes']) ? $data['minutes'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['location'] = isset($data['location']) ? $data['location'] : null;
-        $this->container['countries'] = isset($data['countries']) ? $data['countries'] : null;
-        $this->container['languages'] = isset($data['languages']) ? $data['languages'] : null;
-        $this->container['screening'] = isset($data['screening']) ? $data['screening'] : null;
-        $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
-        $this->container['gender_mix'] = isset($data['gender_mix']) ? $data['gender_mix'] : null;
-        $this->container['devices'] = isset($data['devices']) ? $data['devices'] : null;
-        $this->container['platform'] = isset($data['platform']) ? $data['platform'] : null;
-        $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
+        $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
+        $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
+        $this->container['quote'] = isset($data['quote']) ? $data['quote'] : null;
+        $this->container['incentive'] = isset($data['incentive']) ? $data['incentive'] : null;
+        $this->container['team_id'] = isset($data['team_id']) ? $data['team_id'] : null;
+        $this->container['paid_with'] = isset($data['paid_with']) ? $data['paid_with'] : null;
+        $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
         $this->container['slots'] = isset($data['slots']) ? $data['slots'] : null;
+        $this->container['users'] = isset($data['users']) ? $data['users'] : null;
+        $this->container['pool_secret'] = isset($data['pool_secret']) ? $data['pool_secret'] : null;
+        $this->container['countries'] = isset($data['countries']) ? $data['countries'] : null;
+        $this->container['nda'] = isset($data['nda']) ? $data['nda'] : null;
+        $this->container['languages'] = isset($data['languages']) ? $data['languages'] : null;
+        $this->container['languages_op'] = isset($data['languages_op']) ? $data['languages_op'] : null;
+        $this->container['min_age'] = isset($data['min_age']) ? $data['min_age'] : null;
+        $this->container['max_age'] = isset($data['max_age']) ? $data['max_age'] : null;
+        $this->container['gender_mix'] = isset($data['gender_mix']) ? $data['gender_mix'] : null;
+        $this->container['platform'] = isset($data['platform']) ? $data['platform'] : null;
+        $this->container['contact_via_type'] = isset($data['contact_via_type']) ? $data['contact_via_type'] : null;
+        $this->container['contact_via_details'] = isset($data['contact_via_details']) ? $data['contact_via_details'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
+        $this->container['devices'] = isset($data['devices']) ? $data['devices'] : null;
+        $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
+        $this->container['screening'] = isset($data['screening']) ? $data['screening'] : null;
     }
 
     /**
@@ -389,9 +531,6 @@ self::PLATFORM_ANY,        ];
     {
         $invalidProperties = [];
 
-        if ($this->container['users'] === null) {
-            $invalidProperties[] = "'users' can't be null";
-        }
         if ($this->container['method'] === null) {
             $invalidProperties[] = "'method' can't be null";
         }
@@ -414,10 +553,38 @@ self::PLATFORM_ANY,        ];
             );
         }
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+        if ($this->container['state'] === null) {
+            $invalidProperties[] = "'state' can't be null";
+        }
+        $allowedValues = $this->getStateAllowableValues();
+        if (!is_null($this->container['state']) && !in_array($this->container['state'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPaidWithAllowableValues();
+        if (!is_null($this->container['paid_with']) && !in_array($this->container['paid_with'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'paid_with', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['locale'] === null) {
+            $invalidProperties[] = "'locale' can't be null";
+        }
+        if ($this->container['users'] === null) {
+            $invalidProperties[] = "'users' can't be null";
+        }
+        if ($this->container['languages'] === null) {
+            $invalidProperties[] = "'languages' can't be null";
+        }
+        $allowedValues = $this->getLanguagesOpAllowableValues();
+        if (!is_null($this->container['languages_op']) && !in_array($this->container['languages_op'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'languages_op', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -438,6 +605,22 @@ self::PLATFORM_ANY,        ];
             );
         }
 
+        $allowedValues = $this->getContactViaTypeAllowableValues();
+        if (!is_null($this->container['contact_via_type']) && !in_array($this->container['contact_via_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'contact_via_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -452,78 +635,6 @@ self::PLATFORM_ANY,        ];
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets min_age
-     *
-     * @return float
-     */
-    public function getMinAge()
-    {
-        return $this->container['min_age'];
-    }
-
-    /**
-     * Sets min_age
-     *
-     * @param float $min_age min_age
-     *
-     * @return $this
-     */
-    public function setMinAge($min_age)
-    {
-        $this->container['min_age'] = $min_age;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_age
-     *
-     * @return float
-     */
-    public function getMaxAge()
-    {
-        return $this->container['max_age'];
-    }
-
-    /**
-     * Sets max_age
-     *
-     * @param float $max_age max_age
-     *
-     * @return $this
-     */
-    public function setMaxAge($max_age)
-    {
-        $this->container['max_age'] = $max_age;
-
-        return $this;
-    }
-
-    /**
-     * Gets users
-     *
-     * @return float
-     */
-    public function getUsers()
-    {
-        return $this->container['users'];
-    }
-
-    /**
-     * Sets users
-     *
-     * @param float $users users
-     *
-     * @return $this
-     */
-    public function setUsers($users)
-    {
-        $this->container['users'] = $users;
-
-        return $this;
-    }
 
     /**
      * Gets method
@@ -592,6 +703,636 @@ self::PLATFORM_ANY,        ];
     }
 
     /**
+     * Gets minutes
+     *
+     * @return float
+     */
+    public function getMinutes()
+    {
+        return $this->container['minutes'];
+    }
+
+    /**
+     * Sets minutes
+     *
+     * @param float $minutes minutes
+     *
+     * @return $this
+     */
+    public function setMinutes($minutes)
+    {
+        $this->container['minutes'] = $minutes;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string $title Give the study an optional title. This will be shown in the dashboard. Here you could also add an identifier for your internal orderId or customerId
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param string $state state
+     *
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $allowedValues = $this->getStateAllowableValues();
+        if (!in_array($state, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets location
+     *
+     * @return \Swagger\Client\Model\OrderLocation
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /**
+     * Sets location
+     *
+     * @param \Swagger\Client\Model\OrderLocation $location location
+     *
+     * @return $this
+     */
+    public function setLocation($location)
+    {
+        $this->container['location'] = $location;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact
+     *
+     * @return object
+     */
+    public function getContact()
+    {
+        return $this->container['contact'];
+    }
+
+    /**
+     * Sets contact
+     *
+     * @param object $contact contact
+     *
+     * @return $this
+     */
+    public function setContact($contact)
+    {
+        $this->container['contact'] = $contact;
+
+        return $this;
+    }
+
+    /**
+     * Gets billing
+     *
+     * @return object
+     */
+    public function getBilling()
+    {
+        return $this->container['billing'];
+    }
+
+    /**
+     * Sets billing
+     *
+     * @param object $billing billing
+     *
+     * @return $this
+     */
+    public function setBilling($billing)
+    {
+        $this->container['billing'] = $billing;
+
+        return $this;
+    }
+
+    /**
+     * Gets quote
+     *
+     * @return string
+     */
+    public function getQuote()
+    {
+        return $this->container['quote'];
+    }
+
+    /**
+     * Sets quote
+     *
+     * @param string $quote quote
+     *
+     * @return $this
+     */
+    public function setQuote($quote)
+    {
+        $this->container['quote'] = $quote;
+
+        return $this;
+    }
+
+    /**
+     * Gets incentive
+     *
+     * @return object
+     */
+    public function getIncentive()
+    {
+        return $this->container['incentive'];
+    }
+
+    /**
+     * Sets incentive
+     *
+     * @param object $incentive incentive
+     *
+     * @return $this
+     */
+    public function setIncentive($incentive)
+    {
+        $this->container['incentive'] = $incentive;
+
+        return $this;
+    }
+
+    /**
+     * Gets team_id
+     *
+     * @return string
+     */
+    public function getTeamId()
+    {
+        return $this->container['team_id'];
+    }
+
+    /**
+     * Sets team_id
+     *
+     * @param string $team_id team_id
+     *
+     * @return $this
+     */
+    public function setTeamId($team_id)
+    {
+        $this->container['team_id'] = $team_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets paid_with
+     *
+     * @return string
+     */
+    public function getPaidWith()
+    {
+        return $this->container['paid_with'];
+    }
+
+    /**
+     * Sets paid_with
+     *
+     * @param string $paid_with paid_with
+     *
+     * @return $this
+     */
+    public function setPaidWith($paid_with)
+    {
+        $allowedValues = $this->getPaidWithAllowableValues();
+        if (!is_null($paid_with) && !in_array($paid_with, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'paid_with', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['paid_with'] = $paid_with;
+
+        return $this;
+    }
+
+    /**
+     * Gets locale
+     *
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->container['locale'];
+    }
+
+    /**
+     * Sets locale
+     *
+     * @param string $locale locale
+     *
+     * @return $this
+     */
+    public function setLocale($locale)
+    {
+        $this->container['locale'] = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets slots
+     *
+     * @return \Swagger\Client\Model\OrderSlots[]
+     */
+    public function getSlots()
+    {
+        return $this->container['slots'];
+    }
+
+    /**
+     * Sets slots
+     *
+     * @param \Swagger\Client\Model\OrderSlots[] $slots slots
+     *
+     * @return $this
+     */
+    public function setSlots($slots)
+    {
+        $this->container['slots'] = $slots;
+
+        return $this;
+    }
+
+    /**
+     * Gets users
+     *
+     * @return float
+     */
+    public function getUsers()
+    {
+        return $this->container['users'];
+    }
+
+    /**
+     * Sets users
+     *
+     * @param float $users users
+     *
+     * @return $this
+     */
+    public function setUsers($users)
+    {
+        $this->container['users'] = $users;
+
+        return $this;
+    }
+
+    /**
+     * Gets pool_secret
+     *
+     * @return string
+     */
+    public function getPoolSecret()
+    {
+        return $this->container['pool_secret'];
+    }
+
+    /**
+     * Sets pool_secret
+     *
+     * @param string $pool_secret pool_secret
+     *
+     * @return $this
+     */
+    public function setPoolSecret($pool_secret)
+    {
+        $this->container['pool_secret'] = $pool_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets countries
+     *
+     * @return string[]
+     */
+    public function getCountries()
+    {
+        return $this->container['countries'];
+    }
+
+    /**
+     * Sets countries
+     *
+     * @param string[] $countries 2 digits ISO country code in lowercase. e.g. us, ch, de
+     *
+     * @return $this
+     */
+    public function setCountries($countries)
+    {
+        $this->container['countries'] = $countries;
+
+        return $this;
+    }
+
+    /**
+     * Gets nda
+     *
+     * @return object
+     */
+    public function getNda()
+    {
+        return $this->container['nda'];
+    }
+
+    /**
+     * Sets nda
+     *
+     * @param object $nda nda
+     *
+     * @return $this
+     */
+    public function setNda($nda)
+    {
+        $this->container['nda'] = $nda;
+
+        return $this;
+    }
+
+    /**
+     * Gets languages
+     *
+     * @return string[]
+     */
+    public function getLanguages()
+    {
+        return $this->container['languages'];
+    }
+
+    /**
+     * Sets languages
+     *
+     * @param string[] $languages Languages the test is conducted in or prototype language. 2 digits ISO language code in lowercase. e.g. en, de fr
+     *
+     * @return $this
+     */
+    public function setLanguages($languages)
+    {
+        $this->container['languages'] = $languages;
+
+        return $this;
+    }
+
+    /**
+     * Gets languages_op
+     *
+     * @return string
+     */
+    public function getLanguagesOp()
+    {
+        return $this->container['languages_op'];
+    }
+
+    /**
+     * Sets languages_op
+     *
+     * @param string $languages_op languages_op
+     *
+     * @return $this
+     */
+    public function setLanguagesOp($languages_op)
+    {
+        $allowedValues = $this->getLanguagesOpAllowableValues();
+        if (!is_null($languages_op) && !in_array($languages_op, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'languages_op', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['languages_op'] = $languages_op;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_age
+     *
+     * @return float
+     */
+    public function getMinAge()
+    {
+        return $this->container['min_age'];
+    }
+
+    /**
+     * Sets min_age
+     *
+     * @param float $min_age min_age
+     *
+     * @return $this
+     */
+    public function setMinAge($min_age)
+    {
+        $this->container['min_age'] = $min_age;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_age
+     *
+     * @return float
+     */
+    public function getMaxAge()
+    {
+        return $this->container['max_age'];
+    }
+
+    /**
+     * Sets max_age
+     *
+     * @param float $max_age max_age
+     *
+     * @return $this
+     */
+    public function setMaxAge($max_age)
+    {
+        $this->container['max_age'] = $max_age;
+
+        return $this;
+    }
+
+    /**
+     * Gets gender_mix
+     *
+     * @return string
+     */
+    public function getGenderMix()
+    {
+        return $this->container['gender_mix'];
+    }
+
+    /**
+     * Sets gender_mix
+     *
+     * @param string $gender_mix If empty a random mix will be generated. Mixed means 50/50. FEMALE means female only.
+     *
+     * @return $this
+     */
+    public function setGenderMix($gender_mix)
+    {
+        $allowedValues = $this->getGenderMixAllowableValues();
+        if (!is_null($gender_mix) && !in_array($gender_mix, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'gender_mix', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['gender_mix'] = $gender_mix;
+
+        return $this;
+    }
+
+    /**
+     * Gets platform
+     *
+     * @return string
+     */
+    public function getPlatform()
+    {
+        return $this->container['platform'];
+    }
+
+    /**
+     * Sets platform
+     *
+     * @param string $platform Operating system on the selected devices.
+     *
+     * @return $this
+     */
+    public function setPlatform($platform)
+    {
+        $allowedValues = $this->getPlatformAllowableValues();
+        if (!is_null($platform) && !in_array($platform, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'platform', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['platform'] = $platform;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_via_type
+     *
+     * @return string
+     */
+    public function getContactViaType()
+    {
+        return $this->container['contact_via_type'];
+    }
+
+    /**
+     * Sets contact_via_type
+     *
+     * @param string $contact_via_type contact_via_type
+     *
+     * @return $this
+     */
+    public function setContactViaType($contact_via_type)
+    {
+        $allowedValues = $this->getContactViaTypeAllowableValues();
+        if (!is_null($contact_via_type) && !in_array($contact_via_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'contact_via_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['contact_via_type'] = $contact_via_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_via_details
+     *
+     * @return string
+     */
+    public function getContactViaDetails()
+    {
+        return $this->container['contact_via_details'];
+    }
+
+    /**
+     * Sets contact_via_details
+     *
+     * @param string $contact_via_details contact_via_details
+     *
+     * @return $this
+     */
+    public function setContactViaDetails($contact_via_details)
+    {
+        $this->container['contact_via_details'] = $contact_via_details;
+
+        return $this;
+    }
+
+    /**
      * Gets type
      *
      * @return string
@@ -649,150 +1390,6 @@ self::PLATFORM_ANY,        ];
     }
 
     /**
-     * Gets minutes
-     *
-     * @return float
-     */
-    public function getMinutes()
-    {
-        return $this->container['minutes'];
-    }
-
-    /**
-     * Sets minutes
-     *
-     * @param float $minutes minutes
-     *
-     * @return $this
-     */
-    public function setMinutes($minutes)
-    {
-        $this->container['minutes'] = $minutes;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string $title Give the study an optional title. This will be shown in the dashboard. Here you could also add an identifier for your internal orderId or customerId
-     *
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets location
-     *
-     * @return \Swagger\Client\Model\OrderLocation
-     */
-    public function getLocation()
-    {
-        return $this->container['location'];
-    }
-
-    /**
-     * Sets location
-     *
-     * @param \Swagger\Client\Model\OrderLocation $location location
-     *
-     * @return $this
-     */
-    public function setLocation($location)
-    {
-        $this->container['location'] = $location;
-
-        return $this;
-    }
-
-    /**
-     * Gets countries
-     *
-     * @return string[]
-     */
-    public function getCountries()
-    {
-        return $this->container['countries'];
-    }
-
-    /**
-     * Sets countries
-     *
-     * @param string[] $countries 2 digits ISO country code in lowercase. e.g. us, ch, de
-     *
-     * @return $this
-     */
-    public function setCountries($countries)
-    {
-        $this->container['countries'] = $countries;
-
-        return $this;
-    }
-
-    /**
-     * Gets languages
-     *
-     * @return string[]
-     */
-    public function getLanguages()
-    {
-        return $this->container['languages'];
-    }
-
-    /**
-     * Sets languages
-     *
-     * @param string[] $languages Languages the test is conducted in or prototype language. 2 digits ISO language code in lowercase. e.g. en, de fr
-     *
-     * @return $this
-     */
-    public function setLanguages($languages)
-    {
-        $this->container['languages'] = $languages;
-
-        return $this;
-    }
-
-    /**
-     * Gets screening
-     *
-     * @return \Swagger\Client\Model\Screener[]
-     */
-    public function getScreening()
-    {
-        return $this->container['screening'];
-    }
-
-    /**
-     * Sets screening
-     *
-     * @param \Swagger\Client\Model\Screener[] $screening If you want additional screener questions to be answered. Put in here multiple questions/screener settings to filter the target group further.
-     *
-     * @return $this
-     */
-    public function setScreening($screening)
-    {
-        $this->container['screening'] = $screening;
-
-        return $this;
-    }
-
-    /**
      * Gets tags
      *
      * @return string
@@ -812,39 +1409,6 @@ self::PLATFORM_ANY,        ];
     public function setTags($tags)
     {
         $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets gender_mix
-     *
-     * @return string
-     */
-    public function getGenderMix()
-    {
-        return $this->container['gender_mix'];
-    }
-
-    /**
-     * Sets gender_mix
-     *
-     * @param string $gender_mix If empty a random mix will be generated. Mixed means 50/50. FEMALE means female only.
-     *
-     * @return $this
-     */
-    public function setGenderMix($gender_mix)
-    {
-        $allowedValues = $this->getGenderMixAllowableValues();
-        if (!is_null($gender_mix) && !in_array($gender_mix, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'gender_mix', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['gender_mix'] = $gender_mix;
 
         return $this;
     }
@@ -883,39 +1447,6 @@ self::PLATFORM_ANY,        ];
     }
 
     /**
-     * Gets platform
-     *
-     * @return string
-     */
-    public function getPlatform()
-    {
-        return $this->container['platform'];
-    }
-
-    /**
-     * Sets platform
-     *
-     * @param string $platform Operating system on the selected devices.
-     *
-     * @return $this
-     */
-    public function setPlatform($platform)
-    {
-        $allowedValues = $this->getPlatformAllowableValues();
-        if (!is_null($platform) && !in_array($platform, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'platform', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['platform'] = $platform;
-
-        return $this;
-    }
-
-    /**
      * Gets time_zone
      *
      * @return string
@@ -940,25 +1471,25 @@ self::PLATFORM_ANY,        ];
     }
 
     /**
-     * Gets slots
+     * Gets screening
      *
-     * @return float[]
+     * @return \Swagger\Client\Model\Screener[]
      */
-    public function getSlots()
+    public function getScreening()
     {
-        return $this->container['slots'];
+        return $this->container['screening'];
     }
 
     /**
-     * Sets slots
+     * Sets screening
      *
-     * @param float[] $slots slots
+     * @param \Swagger\Client\Model\Screener[] $screening If you want additional screener questions to be answered. Put in here multiple questions/screener settings to filter the target group further.
      *
      * @return $this
      */
-    public function setSlots($slots)
+    public function setScreening($screening)
     {
-        $this->container['slots'] = $slots;
+        $this->container['screening'] = $screening;
 
         return $this;
     }

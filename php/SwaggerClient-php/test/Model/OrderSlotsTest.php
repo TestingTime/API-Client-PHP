@@ -1,6 +1,6 @@
 <?php
 /**
- * MultiLanguageResponseTest
+ * OrderSlotsTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * MultiLanguageResponseTest Class Doc Comment
+ * OrderSlotsTest Class Doc Comment
  *
  * @category    Class
- * @description A single response option for a user in all languages and if selecting this option brings a user further or gets rejected.
+ * @description Timestamp of the dates you are available to conduct a test.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MultiLanguageResponseTest extends \PHPUnit_Framework_TestCase
+class OrderSlotsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,37 +69,23 @@ class MultiLanguageResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "MultiLanguageResponse"
+     * Test "OrderSlots"
      */
-    public function testMultiLanguageResponse()
+    public function testOrderSlots()
     {
     }
 
     /**
-     * Test attribute "en"
+     * Test attribute "datetime"
      */
-    public function testPropertyEn()
+    public function testPropertyDatetime()
     {
     }
 
     /**
-     * Test attribute "de"
+     * Test attribute "preferred"
      */
-    public function testPropertyDe()
-    {
-    }
-
-    /**
-     * Test attribute "fr"
-     */
-    public function testPropertyFr()
-    {
-    }
-
-    /**
-     * Test attribute "qualification"
-     */
-    public function testPropertyQualification()
+    public function testPropertyPreferred()
     {
     }
 }

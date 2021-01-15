@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
  - [Order](docs/Model/Order.md)
  - [OrderCreated](docs/Model/OrderCreated.md)
  - [OrderLocation](docs/Model/OrderLocation.md)
+ - [OrderSlots](docs/Model/OrderSlots.md)
  - [Participant](docs/Model/Participant.md)
  - [Participants](docs/Model/Participants.md)
  - [Rating](docs/Model/Rating.md)

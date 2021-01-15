@@ -76,13 +76,6 @@ class ScreenerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "question_id"
-     */
-    public function testPropertyQuestionId()
-    {
-    }
-
-    /**
      * Test attribute "type"
      */
     public function testPropertyType()

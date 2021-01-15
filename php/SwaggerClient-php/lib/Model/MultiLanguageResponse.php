@@ -60,7 +60,7 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
         'en' => 'string',
 'de' => 'string',
 'fr' => 'string',
-'operation' => 'string'    ];
+'qualification' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,7 +71,7 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
         'en' => null,
 'de' => null,
 'fr' => null,
-'operation' => null    ];
+'qualification' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -103,7 +103,7 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
         'en' => 'en',
 'de' => 'de',
 'fr' => 'fr',
-'operation' => 'operation'    ];
+'qualification' => 'qualification'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -114,7 +114,7 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
         'en' => 'setEn',
 'de' => 'setDe',
 'fr' => 'setFr',
-'operation' => 'setOperation'    ];
+'qualification' => 'setQualification'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,7 +125,7 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
         'en' => 'getEn',
 'de' => 'getDe',
 'fr' => 'getFr',
-'operation' => 'getOperation'    ];
+'qualification' => 'getQualification'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -168,19 +168,21 @@ class MultiLanguageResponse implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const OPERATION_ALLOW = 'ALLOW';
-const OPERATION_REJECT = 'REJECT';
+    const QUALIFICATION_QUALIFY = 'QUALIFY';
+const QUALIFICATION_DISQUALIFY = 'DISQUALIFY';
+const QUALIFICATION_IRRELEVANT = 'IRRELEVANT';
 
     /**
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getOperationAllowableValues()
+    public function getQualificationAllowableValues()
     {
         return [
-            self::OPERATION_ALLOW,
-self::OPERATION_REJECT,        ];
+            self::QUALIFICATION_QUALIFY,
+self::QUALIFICATION_DISQUALIFY,
+self::QUALIFICATION_IRRELEVANT,        ];
     }
 
     /**
@@ -201,7 +203,7 @@ self::OPERATION_REJECT,        ];
         $this->container['en'] = isset($data['en']) ? $data['en'] : null;
         $this->container['de'] = isset($data['de']) ? $data['de'] : null;
         $this->container['fr'] = isset($data['fr']) ? $data['fr'] : null;
-        $this->container['operation'] = isset($data['operation']) ? $data['operation'] : null;
+        $this->container['qualification'] = isset($data['qualification']) ? $data['qualification'] : null;
     }
 
     /**
@@ -216,10 +218,10 @@ self::OPERATION_REJECT,        ];
         if ($this->container['en'] === null) {
             $invalidProperties[] = "'en' can't be null";
         }
-        $allowedValues = $this->getOperationAllowableValues();
-        if (!is_null($this->container['operation']) && !in_array($this->container['operation'], $allowedValues, true)) {
+        $allowedValues = $this->getQualificationAllowableValues();
+        if (!is_null($this->container['qualification']) && !in_array($this->container['qualification'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'operation', must be one of '%s'",
+                "invalid value for 'qualification', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -312,34 +314,34 @@ self::OPERATION_REJECT,        ];
     }
 
     /**
-     * Gets operation
+     * Gets qualification
      *
      * @return string
      */
-    public function getOperation()
+    public function getQualification()
     {
-        return $this->container['operation'];
+        return $this->container['qualification'];
     }
 
     /**
-     * Sets operation
+     * Sets qualification
      *
-     * @param string $operation operation
+     * @param string $qualification qualification
      *
      * @return $this
      */
-    public function setOperation($operation)
+    public function setQualification($qualification)
     {
-        $allowedValues = $this->getOperationAllowableValues();
-        if (!is_null($operation) && !in_array($operation, $allowedValues, true)) {
+        $allowedValues = $this->getQualificationAllowableValues();
+        if (!is_null($qualification) && !in_array($qualification, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'operation', must be one of '%s'",
+                    "Invalid value for 'qualification', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['operation'] = $operation;
+        $this->container['qualification'] = $qualification;
 
         return $this;
     }

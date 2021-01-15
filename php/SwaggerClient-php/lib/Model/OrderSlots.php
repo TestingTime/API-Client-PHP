@@ -1,6 +1,6 @@
 <?php
 /**
- * Screener
+ * OrderSlots
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Screener Class Doc Comment
+ * OrderSlots Class Doc Comment
  *
  * @category Class
+ * @description Timestamp of the dates you are available to conduct a test.
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Screener implements ModelInterface, ArrayAccess
+class OrderSlots implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +49,7 @@ class Screener implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Screener';
+    protected static $swaggerModelName = 'Order_slots';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +57,8 @@ class Screener implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-'ask' => '\Swagger\Client\Model\MultiLanguageAsk',
-'responses' => '\Swagger\Client\Model\MultiLanguageResponse[]',
-'placeholder' => 'string'    ];
+        'datetime' => 'float',
+'preferred' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,10 +66,8 @@ class Screener implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-'ask' => null,
-'responses' => null,
-'placeholder' => null    ];
+        'datetime' => null,
+'preferred' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -99,10 +96,8 @@ class Screener implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-'ask' => 'ask',
-'responses' => 'responses',
-'placeholder' => 'placeholder'    ];
+        'datetime' => 'datetime',
+'preferred' => 'preferred'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -110,10 +105,8 @@ class Screener implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-'ask' => 'setAsk',
-'responses' => 'setResponses',
-'placeholder' => 'setPlaceholder'    ];
+        'datetime' => 'setDatetime',
+'preferred' => 'setPreferred'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -121,10 +114,8 @@ class Screener implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-'ask' => 'getAsk',
-'responses' => 'getResponses',
-'placeholder' => 'getPlaceholder'    ];
+        'datetime' => 'getDatetime',
+'preferred' => 'getPreferred'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -167,22 +158,7 @@ class Screener implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TYPE_RADIO = 'RADIO';
-const TYPE_CHECKBOX = 'CHECKBOX';
-const TYPE_TEXT = 'TEXT';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_RADIO,
-self::TYPE_CHECKBOX,
-self::TYPE_TEXT,        ];
-    }
+    
 
     /**
      * Associative array for storing property values
@@ -199,10 +175,8 @@ self::TYPE_TEXT,        ];
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['ask'] = isset($data['ask']) ? $data['ask'] : null;
-        $this->container['responses'] = isset($data['responses']) ? $data['responses'] : null;
-        $this->container['placeholder'] = isset($data['placeholder']) ? $data['placeholder'] : null;
+        $this->container['datetime'] = isset($data['datetime']) ? $data['datetime'] : null;
+        $this->container['preferred'] = isset($data['preferred']) ? $data['preferred'] : null;
     }
 
     /**
@@ -213,14 +187,6 @@ self::TYPE_TEXT,        ];
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -238,106 +204,49 @@ self::TYPE_TEXT,        ];
 
 
     /**
-     * Gets type
+     * Gets datetime
      *
-     * @return string
+     * @return float
      */
-    public function getType()
+    public function getDatetime()
     {
-        return $this->container['type'];
+        return $this->container['datetime'];
     }
 
     /**
-     * Sets type
+     * Sets datetime
      *
-     * @param string $type type
+     * @param float $datetime datetime
      *
      * @return $this
      */
-    public function setType($type)
+    public function setDatetime($datetime)
     {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
+        $this->container['datetime'] = $datetime;
 
         return $this;
     }
 
     /**
-     * Gets ask
+     * Gets preferred
      *
-     * @return \Swagger\Client\Model\MultiLanguageAsk
+     * @return bool
      */
-    public function getAsk()
+    public function getPreferred()
     {
-        return $this->container['ask'];
+        return $this->container['preferred'];
     }
 
     /**
-     * Sets ask
+     * Sets preferred
      *
-     * @param \Swagger\Client\Model\MultiLanguageAsk $ask ask
+     * @param bool $preferred preferred
      *
      * @return $this
      */
-    public function setAsk($ask)
+    public function setPreferred($preferred)
     {
-        $this->container['ask'] = $ask;
-
-        return $this;
-    }
-
-    /**
-     * Gets responses
-     *
-     * @return \Swagger\Client\Model\MultiLanguageResponse[]
-     */
-    public function getResponses()
-    {
-        return $this->container['responses'];
-    }
-
-    /**
-     * Sets responses
-     *
-     * @param \Swagger\Client\Model\MultiLanguageResponse[] $responses responses
-     *
-     * @return $this
-     */
-    public function setResponses($responses)
-    {
-        $this->container['responses'] = $responses;
-
-        return $this;
-    }
-
-    /**
-     * Gets placeholder
-     *
-     * @return string
-     */
-    public function getPlaceholder()
-    {
-        return $this->container['placeholder'];
-    }
-
-    /**
-     * Sets placeholder
-     *
-     * @param string $placeholder This can only be specified for questions with type TEXT.
-     *
-     * @return $this
-     */
-    public function setPlaceholder($placeholder)
-    {
-        $this->container['placeholder'] = $placeholder;
+        $this->container['preferred'] = $preferred;
 
         return $this;
     }
