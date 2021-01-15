@@ -84,7 +84,7 @@ class Order implements ModelInterface, ArrayAccess
 'link' => 'string',
 'tags' => 'string',
 'devices' => 'string[]',
-'time_zone' => 'string',
+'timezone' => 'string',
 'screening' => '\Swagger\Client\Model\Screener[]'    ];
 
     /**
@@ -121,7 +121,7 @@ class Order implements ModelInterface, ArrayAccess
 'link' => null,
 'tags' => null,
 'devices' => null,
-'time_zone' => null,
+'timezone' => null,
 'screening' => null    ];
 
     /**
@@ -179,7 +179,7 @@ class Order implements ModelInterface, ArrayAccess
 'link' => 'link',
 'tags' => 'tags',
 'devices' => 'devices',
-'time_zone' => 'timeZone',
+'timezone' => 'timezone',
 'screening' => 'screening'    ];
 
     /**
@@ -216,7 +216,7 @@ class Order implements ModelInterface, ArrayAccess
 'link' => 'setLink',
 'tags' => 'setTags',
 'devices' => 'setDevices',
-'time_zone' => 'setTimeZone',
+'timezone' => 'setTimezone',
 'screening' => 'setScreening'    ];
 
     /**
@@ -253,7 +253,7 @@ class Order implements ModelInterface, ArrayAccess
 'link' => 'getLink',
 'tags' => 'getTags',
 'devices' => 'getDevices',
-'time_zone' => 'getTimeZone',
+'timezone' => 'getTimezone',
 'screening' => 'getScreening'    ];
 
     /**
@@ -489,7 +489,7 @@ self::DEVICES_ANY,        ];
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
         $this->container['devices'] = isset($data['devices']) ? $data['devices'] : null;
-        $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
+        $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
         $this->container['screening'] = isset($data['screening']) ? $data['screening'] : null;
     }
 
@@ -587,6 +587,9 @@ self::DEVICES_ANY,        ];
             );
         }
 
+        if ($this->container['timezone'] === null) {
+            $invalidProperties[] = "'timezone' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -1356,25 +1359,25 @@ self::DEVICES_ANY,        ];
     }
 
     /**
-     * Gets time_zone
+     * Gets timezone
      *
      * @return string
      */
-    public function getTimeZone()
+    public function getTimezone()
     {
-        return $this->container['time_zone'];
+        return $this->container['timezone'];
     }
 
     /**
-     * Sets time_zone
+     * Sets timezone
      *
-     * @param string $time_zone Time zone id, list can be found e.g. here: https://garygregory.wordpress.com/2013/06/18/what-are-the-java-timezone-ids/
+     * @param string $timezone Time zone id, list can be found e.g. here: https://garygregory.wordpress.com/2013/06/18/what-are-the-java-timezone-ids/
      *
      * @return $this
      */
-    public function setTimeZone($time_zone)
+    public function setTimezone($timezone)
     {
-        $this->container['time_zone'] = $time_zone;
+        $this->container['timezone'] = $timezone;
 
         return $this;
     }

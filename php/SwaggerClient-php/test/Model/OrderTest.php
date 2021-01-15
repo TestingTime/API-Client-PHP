@@ -272,9 +272,9 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "time_zone"
+     * Test attribute "timezone"
      */
-    public function testPropertyTimeZone()
+    public function testPropertyTimezone()
     {
     }
 
