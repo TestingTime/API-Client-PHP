@@ -92,14 +92,15 @@ class OrderingApi
      * Create a new order to recruit test users.
      *
      * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\OrderCreated
      */
-    public function ordersPost($body)
+    public function ordersPost($body, $x_api_key)
     {
-        list($response) = $this->ordersPostWithHttpInfo($body);
+        list($response) = $this->ordersPostWithHttpInfo($body, $x_api_key);
         return $response;
     }
 
@@ -109,15 +110,16 @@ class OrderingApi
      * Create a new order to recruit test users.
      *
      * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\OrderCreated, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ordersPostWithHttpInfo($body)
+    public function ordersPostWithHttpInfo($body, $x_api_key)
     {
         $returnType = '\Swagger\Client\Model\OrderCreated';
-        $request = $this->ordersPostRequest($body);
+        $request = $this->ordersPostRequest($body, $x_api_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -208,13 +210,14 @@ class OrderingApi
      * Create a new order to recruit test users.
      *
      * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ordersPostAsync($body)
+    public function ordersPostAsync($body, $x_api_key)
     {
-        return $this->ordersPostAsyncWithHttpInfo($body)
+        return $this->ordersPostAsyncWithHttpInfo($body, $x_api_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -228,14 +231,15 @@ class OrderingApi
      * Create a new order to recruit test users.
      *
      * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ordersPostAsyncWithHttpInfo($body)
+    public function ordersPostAsyncWithHttpInfo($body, $x_api_key)
     {
         $returnType = '\Swagger\Client\Model\OrderCreated';
-        $request = $this->ordersPostRequest($body);
+        $request = $this->ordersPostRequest($body, $x_api_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -278,16 +282,23 @@ class OrderingApi
      * Create request for operation 'ordersPost'
      *
      * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function ordersPostRequest($body)
+    protected function ordersPostRequest($body, $x_api_key)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $body when calling ordersPost'
+            );
+        }
+        // verify the required parameter 'x_api_key' is set
+        if ($x_api_key === null || (is_array($x_api_key) && count($x_api_key) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $x_api_key when calling ordersPost'
             );
         }
 
@@ -298,6 +309,10 @@ class OrderingApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($x_api_key !== null) {
+            $headerParams['x-api-key'] = ObjectSerializer::toHeaderValue($x_api_key);
+        }
 
 
         // body params

@@ -1,13 +1,13 @@
 # Swagger\Client\OrderingApi
 
-All URIs are relative to *https://sandbox.api.testingtime.com/*
+All URIs are relative to *https://sandbox.api.testingtime.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ordersPost**](OrderingApi.md#orderspost) | **POST** /orders | Create a new order to recruit test users.
 
 # **ordersPost**
-> \Swagger\Client\Model\OrderCreated ordersPost($body)
+> \Swagger\Client\Model\OrderCreated ordersPost($body, $x_api_key)
 
 Create a new order to recruit test users.
 
@@ -27,9 +27,10 @@ $apiInstance = new Swagger\Client\Api\OrderingApi(
     $config
 );
 $body = new \Swagger\Client\Model\Order(); // \Swagger\Client\Model\Order | Order with all its properties to be created
+$x_api_key = "x_api_key_example"; // string | Partners API key - get this from the engineers of TestingTime
 
 try {
-    $result = $apiInstance->ordersPost($body);
+    $result = $apiInstance->ordersPost($body, $x_api_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderingApi->ordersPost: ', $e->getMessage(), PHP_EOL;
@@ -42,6 +43,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Swagger\Client\Model\Order**](../Model/Order.md)| Order with all its properties to be created |
+ **x_api_key** | **string**| Partners API key - get this from the engineers of TestingTime |
 
 ### Return type
 

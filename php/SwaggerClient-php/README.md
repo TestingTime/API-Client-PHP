@@ -68,9 +68,10 @@ $apiInstance = new Swagger\Client\Api\OrderingApi(
     $config
 );
 $body = new \Swagger\Client\Model\Order(); // \Swagger\Client\Model\Order | Order with all its properties to be created
+$x_api_key = "x_api_key_example"; // string | Partners API key - get this from the engineers of TestingTime
 
 try {
-    $result = $apiInstance->ordersPost($body);
+    $result = $apiInstance->ordersPost($body, $x_api_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderingApi->ordersPost: ', $e->getMessage(), PHP_EOL;
@@ -80,7 +81,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://sandbox.api.testingtime.com/*
+All URIs are relative to *https://sandbox.api.testingtime.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
