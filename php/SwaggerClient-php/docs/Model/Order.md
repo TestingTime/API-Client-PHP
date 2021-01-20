@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **contact_via_details** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **link** | **string** | The url where the participants are being sent to. Use {{PARTICIPANT_ID}} as a placeholder where we put a participants specific id if you need to different urls per user. | [optional] 
-**tags** | **string** | An ID that identifies a customer ordering. This is important to exclude test users that were already with the same customer. | [optional] 
+**tags** | **string[]** |  | [optional] 
 **devices** | **string[]** |  | [optional] 
 **timezone** | **string** | Time zone id, list can be found e.g. here: https://garygregory.wordpress.com/2013/06/18/what-are-the-java-timezone-ids/ | 
 **screening** | [**\Swagger\Client\Model\Screener[]**](Screener.md) | If you want additional screener questions to be answered. Put in here multiple questions/screener settings to filter the target group further. | [optional] 

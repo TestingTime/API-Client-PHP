@@ -82,7 +82,7 @@ class Order implements ModelInterface, ArrayAccess
 'contact_via_details' => 'string',
 'type' => 'string',
 'link' => 'string',
-'tags' => 'string',
+'tags' => 'string[]',
 'devices' => 'string[]',
 'timezone' => 'string',
 'screening' => '\Swagger\Client\Model\Screener[]'    ];
@@ -1304,7 +1304,7 @@ self::DEVICES_ANY,        ];
     /**
      * Gets tags
      *
-     * @return string
+     * @return string[]
      */
     public function getTags()
     {
@@ -1314,7 +1314,7 @@ self::DEVICES_ANY,        ];
     /**
      * Sets tags
      *
-     * @param string $tags An ID that identifies a customer ordering. This is important to exclude test users that were already with the same customer.
+     * @param string[] $tags tags
      *
      * @return $this
      */
