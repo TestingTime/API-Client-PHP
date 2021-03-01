@@ -1,15 +1,15 @@
-# Swagger\Client\OrderingApi
+# Swagger\Client\RatingApi
 
 All URIs are relative to *https://sandbox.api.testingtime.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ordersPost**](OrderingApi.md#orderspost) | **POST** /orders | Create a new order to recruit test users.
+[**ordersOrderIdParticipantsUserIdRatingPost**](RatingApi.md#ordersorderidparticipantsuseridratingpost) | **POST** /orders/{orderId}/participants/{userId}/rating | Rate a test participant.
 
-# **ordersPost**
-> \Swagger\Client\Model\OrderCreated ordersPost($body, $x_api_key)
+# **ordersOrderIdParticipantsUserIdRatingPost**
+> ordersOrderIdParticipantsUserIdRatingPost($body, $x_api_key, $order_id, $user_id)
 
-Create a new order to recruit test users.
+Rate a test participant.
 
 ### Example
 ```php
@@ -20,20 +20,21 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('x-
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\OrderingApi(
+$apiInstance = new Swagger\Client\Api\RatingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\Order(); // \Swagger\Client\Model\Order | Order with all its properties to be created
+$body = new \Swagger\Client\Model\Rating(); // \Swagger\Client\Model\Rating | Rating with all its properties to be created
 $x_api_key = "x_api_key_example"; // string | Partners API key - get this from the engineers of TestingTime
+$order_id = "order_id_example"; // string | Id of the order for which to rate a user
+$user_id = "user_id_example"; // string | Id of the participant
 
 try {
-    $result = $apiInstance->ordersPost($body, $x_api_key);
-    print_r($result);
+    $apiInstance->ordersOrderIdParticipantsUserIdRatingPost($body, $x_api_key, $order_id, $user_id);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderingApi->ordersPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RatingApi->ordersOrderIdParticipantsUserIdRatingPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -42,12 +43,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Order**](../Model/Order.md)| Order with all its properties to be created |
+ **body** | [**\Swagger\Client\Model\Rating**](../Model/Rating.md)| Rating with all its properties to be created |
  **x_api_key** | **string**| Partners API key - get this from the engineers of TestingTime |
+ **order_id** | **string**| Id of the order for which to rate a user |
+ **user_id** | **string**| Id of the participant |
 
 ### Return type
 
-[**\Swagger\Client\Model\OrderCreated**](../Model/OrderCreated.md)
+void (empty response body)
 
 ### Authorization
 

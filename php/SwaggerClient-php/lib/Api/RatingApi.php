@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderingApi
+ * RatingApi
  * PHP version 5
  *
  * @category Class
@@ -39,14 +39,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * OrderingApi Class Doc Comment
+ * RatingApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderingApi
+class RatingApi
 {
     /**
      * @var ClientInterface
@@ -87,39 +87,42 @@ class OrderingApi
     }
 
     /**
-     * Operation ordersPost
+     * Operation ordersOrderIdParticipantsUserIdRatingPost
      *
-     * Create a new order to recruit test users.
+     * Rate a test participant.
      *
-     * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  \Swagger\Client\Model\Rating $body Rating with all its properties to be created (required)
      * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
+     * @param  string $order_id Id of the order for which to rate a user (required)
+     * @param  string $user_id Id of the participant (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\OrderCreated
+     * @return void
      */
-    public function ordersPost($body, $x_api_key)
+    public function ordersOrderIdParticipantsUserIdRatingPost($body, $x_api_key, $order_id, $user_id)
     {
-        list($response) = $this->ordersPostWithHttpInfo($body, $x_api_key);
-        return $response;
+        $this->ordersOrderIdParticipantsUserIdRatingPostWithHttpInfo($body, $x_api_key, $order_id, $user_id);
     }
 
     /**
-     * Operation ordersPostWithHttpInfo
+     * Operation ordersOrderIdParticipantsUserIdRatingPostWithHttpInfo
      *
-     * Create a new order to recruit test users.
+     * Rate a test participant.
      *
-     * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  \Swagger\Client\Model\Rating $body Rating with all its properties to be created (required)
      * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
+     * @param  string $order_id Id of the order for which to rate a user (required)
+     * @param  string $user_id Id of the participant (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\OrderCreated, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ordersPostWithHttpInfo($body, $x_api_key)
+    public function ordersOrderIdParticipantsUserIdRatingPostWithHttpInfo($body, $x_api_key, $order_id, $user_id)
     {
-        $returnType = '\Swagger\Client\Model\OrderCreated';
-        $request = $this->ordersPostRequest($body, $x_api_key);
+        $returnType = '';
+        $request = $this->ordersOrderIdParticipantsUserIdRatingPostRequest($body, $x_api_key, $order_id, $user_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -149,32 +152,10 @@ class OrderingApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\OrderCreated',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -205,19 +186,21 @@ class OrderingApi
     }
 
     /**
-     * Operation ordersPostAsync
+     * Operation ordersOrderIdParticipantsUserIdRatingPostAsync
      *
-     * Create a new order to recruit test users.
+     * Rate a test participant.
      *
-     * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  \Swagger\Client\Model\Rating $body Rating with all its properties to be created (required)
      * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
+     * @param  string $order_id Id of the order for which to rate a user (required)
+     * @param  string $user_id Id of the participant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ordersPostAsync($body, $x_api_key)
+    public function ordersOrderIdParticipantsUserIdRatingPostAsync($body, $x_api_key, $order_id, $user_id)
     {
-        return $this->ordersPostAsyncWithHttpInfo($body, $x_api_key)
+        return $this->ordersOrderIdParticipantsUserIdRatingPostAsyncWithHttpInfo($body, $x_api_key, $order_id, $user_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -226,40 +209,28 @@ class OrderingApi
     }
 
     /**
-     * Operation ordersPostAsyncWithHttpInfo
+     * Operation ordersOrderIdParticipantsUserIdRatingPostAsyncWithHttpInfo
      *
-     * Create a new order to recruit test users.
+     * Rate a test participant.
      *
-     * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  \Swagger\Client\Model\Rating $body Rating with all its properties to be created (required)
      * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
+     * @param  string $order_id Id of the order for which to rate a user (required)
+     * @param  string $user_id Id of the participant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ordersPostAsyncWithHttpInfo($body, $x_api_key)
+    public function ordersOrderIdParticipantsUserIdRatingPostAsyncWithHttpInfo($body, $x_api_key, $order_id, $user_id)
     {
-        $returnType = '\Swagger\Client\Model\OrderCreated';
-        $request = $this->ordersPostRequest($body, $x_api_key);
+        $returnType = '';
+        $request = $this->ordersOrderIdParticipantsUserIdRatingPostRequest($body, $x_api_key, $order_id, $user_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -279,30 +250,44 @@ class OrderingApi
     }
 
     /**
-     * Create request for operation 'ordersPost'
+     * Create request for operation 'ordersOrderIdParticipantsUserIdRatingPost'
      *
-     * @param  \Swagger\Client\Model\Order $body Order with all its properties to be created (required)
+     * @param  \Swagger\Client\Model\Rating $body Rating with all its properties to be created (required)
      * @param  string $x_api_key Partners API key - get this from the engineers of TestingTime (required)
+     * @param  string $order_id Id of the order for which to rate a user (required)
+     * @param  string $user_id Id of the participant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function ordersPostRequest($body, $x_api_key)
+    protected function ordersOrderIdParticipantsUserIdRatingPostRequest($body, $x_api_key, $order_id, $user_id)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling ordersPost'
+                'Missing the required parameter $body when calling ordersOrderIdParticipantsUserIdRatingPost'
             );
         }
         // verify the required parameter 'x_api_key' is set
         if ($x_api_key === null || (is_array($x_api_key) && count($x_api_key) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $x_api_key when calling ordersPost'
+                'Missing the required parameter $x_api_key when calling ordersOrderIdParticipantsUserIdRatingPost'
+            );
+        }
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_id when calling ordersOrderIdParticipantsUserIdRatingPost'
+            );
+        }
+        // verify the required parameter 'user_id' is set
+        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $user_id when calling ordersOrderIdParticipantsUserIdRatingPost'
             );
         }
 
-        $resourcePath = '/orders';
+        $resourcePath = '/orders/{orderId}/participants/{userId}/rating';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -314,6 +299,22 @@ class OrderingApi
             $headerParams['x-api-key'] = ObjectSerializer::toHeaderValue($x_api_key);
         }
 
+        // path params
+        if ($order_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($order_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($user_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'userId' . '}',
+                ObjectSerializer::toPathValue($user_id),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
