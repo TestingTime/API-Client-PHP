@@ -48,6 +48,9 @@ class ObjectSerializer
      */
     public static function sanitizeForSerialization($data, $format = null)
     {
+        if ($data instanceof \stdClass) {
+            $data = get_object_vars($data);
+        }
         if (is_scalar($data) || null === $data) {
             return $data;
         } elseif ($data instanceof \DateTime) {
